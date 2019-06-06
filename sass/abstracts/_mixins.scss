@@ -14,25 +14,26 @@
   transform: translate(-50%, -50%);
 }
 
-/* Media Queries
-0 - 600:        Phone
-600 - 900:      Tablet Portrait
-900 - 1200:     Tablet Landscape
-1200 - 1800:    Normal Styles
-1800px + :      Big Desktop
+/*
+ $breakpoint args choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
 */
 
+// em and rem do not use the root font size in media queries, they use the default browser size of 16px
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-      @media (max-width: 37.5em) { @content };
+    @media (max-width: 37.5em) { @content }; // 600px/16px => 37.5em
   }
   @if $breakpoint == tab-port {
-      @media (max-width: 56.25em) { @content };
+    @media (max-width: 56.23em) { @content }; // 900px
   }
   @if $breakpoint == tab-land {
-      @media (max-width: 75em) { @content };
+    @media (max-width: 75em) { @content }; // 1200px
   }
   @if $breakpoint == big-desktop {
-      @media (min-width: 112.5em) { @content };
+    @media (min-width: 112.5em) { @content }; // 1800px
   }
 }
