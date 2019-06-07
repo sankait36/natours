@@ -9,7 +9,6 @@
 
   @include respond(tab-port) {
     padding: 2rem;
-
   }
 
   &__icon {
@@ -23,9 +22,7 @@
 
     @include respond(tab-port) {
       margin-bottom: 0;
-      
     }
-  
   }
 
   &:hover {
