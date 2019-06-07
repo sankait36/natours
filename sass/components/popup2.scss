@@ -34,10 +34,6 @@
       display: inline-block;
       transition: all .2s;
       line-height: 1;
-
-      @include respond(tab-port) {
-        color: $color-grey-dark-3;
-      }
     }
 
     &:hover{
@@ -56,26 +52,11 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(.5);
     transition: all .4s .2s;
-
-    @include respond(tab-port) {
-      display: block;
-    }
-
   }
 
   &__left{
     width: 33.33333333%;
     display: table-cell;
-
-    @include respond(tab-port) {
-      width: 100%;
-      display: block;
-      overflow: hidden;
-    }
-
-    @include respond(phone) {
-        display: none;
-    }
   }
 
   &__right {
@@ -83,24 +64,11 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
-
-    @include respond(tab-port) {
-      width: 100%;
-      display: block;
-      padding: 2rem 4rem;
-    }
   }
 
   &__img {
     display: block;
     width: 100%;
-
-    @include respond(tab-port) { 
-      display: inline-block;
-      width: 50%;
-      float: left;
-      height: 23rem;
-    }
   }
 
   &__text {
@@ -121,8 +89,10 @@
     hyphens: auto;
   
     text-align: justify;
-    
-    @include respond(tab-port) {
+  }
+
+  @include respond(tab-land) {
+    &__text {
       -moz-column-count: 0;
       column-count: 0;
 
@@ -132,10 +102,30 @@
       -moz-column-rule: 0;
       column-rule: 0;
 
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  @include respond(tab-port) {
+    &__left {
+      width: 100%;
+      display: inline-block;
+    } 
+
+    &__right {
+      width: 100%;
+      display: inline-block;
     }
 
-    @include respond(phone) {
+
+  }
+
+  @include respond(phone) {
+    &__img {
+      display: none;
+    }
+
+    &__text {
       -moz-column-count: 0;
       column-count: 0;
 
